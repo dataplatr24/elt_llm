@@ -1,0 +1,22 @@
+name: finance-lakehouse-app
+description: Finance Dashboard App
+command:
+  - uvicorn
+  - app.main:app
+  - --host
+  - 0.0.0.0
+  - --port
+  - "8000"
+port: 8000
+env:
+  - name: DATABRICKS_SERVER_HOSTNAME
+    value: "dbc-4a33b48b-e7a2.cloud.databricks.com"  # Replace with your workspace URL
+  - name: DATABRICKS_SQL_HTTP_PATH
+    value: "/sql/1.0/warehouses/9069ece157d70975"  # Replace with your SQL warehouse HTTP path
+
+resources:
+  - name: my-warehouse
+    warehouse:
+      id: "9069ece157d70975"  # Get this from SQL Warehouse connection details
+    permission: CAN_USE
+
