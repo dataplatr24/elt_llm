@@ -2,6 +2,8 @@ import os
 import requests
 import time
 from contextlib import contextmanager
+from dotenv import load_dotenv
+load_dotenv() 
 
 class DatabricksConnection:
     def __init__(self, server_hostname, http_path, access_token):

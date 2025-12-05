@@ -154,6 +154,7 @@ def load_finance_data(connection):
         print(f"DEBUG: Fetched {len(rows)} rows")
         print(f"DEBUG: First row = {rows[0] if rows else 'No data'}")
         
+        
         return rows
     except Exception as e:
         print(f"ERROR: Query failed - {e}")
