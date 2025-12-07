@@ -187,10 +187,10 @@ async def generate_description(
         client_id = os.getenv("DATABRICKS_CLIENT_ID")
         client_secret = os.getenv("DATABRICKS_CLIENT_SECRET")
 
-        # server_hostname = "dbc-4a33b48b-e7a2.cloud.databricks.com"
-        # http_path =  "/sql/1.0/warehouses/9069ece157d70975"
-        # client_id = "bfc5d5b4-0d3c-45cd-b92d-83c334ae27f8"
-        # client_secret = "dosef7815f63ffaa0ae6aaa9ade2101a6ac3"
+        server_hostname = "dbc-4a33b48b-e7a2.cloud.databricks.com"
+        http_path =  "/sql/1.0/warehouses/9069ece157d70975"
+        client_id = "bfc5d5b4-0d3c-45cd-b92d-83c334ae27f8"
+        client_secret = "dosef7815f63ffaa0ae6aaa9ade2101a6ac3"
         
         print(f"DEBUG: Environment check - hostname={server_hostname}")
         

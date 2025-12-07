@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function TableBrowser({ user }) {
+function TableBrowser() {
   const [catalogs, setCatalogs] = useState([]);
   const [schemas, setSchemas] = useState([]);
   const [tables, setTables] = useState([]);
@@ -51,26 +51,6 @@ function TableBrowser({ user }) {
       loadTableData(selectedCatalog, selectedSchema, selectedTable);
     }
   }, [selectedTable]);
-
-  const handleLogout = async () => {
-  try {
-    const response = await fetch("/api/logout", {
-      method: "POST",
-      credentials: "include"
-    });
-    
-    if (response.ok) {
-      // Clear any local state if needed
-      window.location.href = "/";
-    } else {
-      throw new Error("Logout failed");
-    }
-  } catch (error) {
-    console.error("Logout error:", error);
-    // Force redirect anyway to clear session
-    window.location.href = "/";
-  }
-};
 
   const resetState = () => {
     setCurrentDescription("");
@@ -307,13 +287,8 @@ function TableBrowser({ user }) {
         </div>
         <div style={styles.headerRight}>
           <div style={styles.userProfile}>
-            <span style={styles.userName}>{user?.name || user?.email || "User"}</span>
-            <div style={styles.avatar}>
-              {(user?.name || user?.email || "U").charAt(0).toUpperCase()}
-            </div>
-            <button onClick={handleLogout} style={styles.logoutButton} title="Logout">
-              🚪
-            </button>
+            <span style={styles.userName}>Admin</span>
+            <div style={styles.avatar}>A</div>
           </div>
         </div>
       </header>
@@ -508,7 +483,6 @@ const styles = {
   userProfile: { display: 'flex', alignItems: 'center', gap: '12px' },
   userName: { fontSize: '14px' },
   avatar: { width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '600', fontSize: '16px' },
-  logoutButton: { background: 'none', border: 'none', color: 'white', fontSize: '20px', cursor: 'pointer', padding: '8px', borderRadius: '4px', transition: 'background-color 0.2s' },
   mainContent: { display: 'flex', flex: 1, overflow: 'hidden' },
   sidebar: { width: '240px', backgroundColor: '#111827', color: 'white', padding: '24px 0', transition: 'width 0.3s ease', overflow: 'hidden', boxShadow: '2px 0 4px rgba(0,0,0,0.1)' },
   sidebarClosed: { width: '64px' },

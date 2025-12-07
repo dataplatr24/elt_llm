@@ -52,25 +52,9 @@ function TableBrowser({ user }) {
     }
   }, [selectedTable]);
 
-  const handleLogout = async () => {
-  try {
-    const response = await fetch("/api/logout", {
-      method: "POST",
-      credentials: "include"
-    });
-    
-    if (response.ok) {
-      // Clear any local state if needed
-      window.location.href = "/";
-    } else {
-      throw new Error("Logout failed");
-    }
-  } catch (error) {
-    console.error("Logout error:", error);
-    // Force redirect anyway to clear session
-    window.location.href = "/";
-  }
-};
+  const handleLogout = () => {
+    window.location.href = "/auth/logout";
+  };
 
   const resetState = () => {
     setCurrentDescription("");
