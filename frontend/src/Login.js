@@ -116,21 +116,7 @@ function Login() {
                 </>
               )}
             </button>
-
-            <div style={styles.features}>
-              <div style={styles.feature}>
-                <span style={styles.featureIcon}>🤖</span>
-                <span style={styles.featureText}>AI-generated descriptions</span>
-              </div>
-              <div style={styles.feature}>
-                <span style={styles.featureIcon}>📊</span>
-                <span style={styles.featureText}>Table & column enrichment</span>
-              </div>
-              <div style={styles.feature}>
-                <span style={styles.featureIcon}>🔒</span>
-                <span style={styles.featureText}>Secure authentication</span>
-              </div>
-            </div>
+            
           </div>
         </form>
 

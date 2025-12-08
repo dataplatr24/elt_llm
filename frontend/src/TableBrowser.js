@@ -312,7 +312,7 @@ function TableBrowser({ user }) {
               {(user?.name || user?.email || "U").charAt(0).toUpperCase()}
             </div>
             <button onClick={handleLogout} style={styles.logoutButton} title="Logout">
-              🚪
+              ⏏️
             </button>
           </div>
         </div>
@@ -324,11 +324,7 @@ function TableBrowser({ user }) {
             <a href="#enrich" style={{...styles.navItem, ...styles.navItemActive}}>
               <span style={styles.navIcon}>✨</span>
               {sidebarOpen && <span>Enrich</span>}
-            </a>
-            <a href="#tables" style={styles.navItem}>
-              <span style={styles.navIcon}>📊</span>
-              {sidebarOpen && <span>Tables</span>}
-            </a>
+            </a>            
           </nav>
         </aside>
 
